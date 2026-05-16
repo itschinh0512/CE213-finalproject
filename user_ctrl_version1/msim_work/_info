@@ -1,0 +1,23 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\itsch\OneDrive\Documents\CE213\doan\version1
+vsw_decoder
+!s100 5NgdD[5nFc4=FD7=X<0fE0
+IKi^B9OkE[;NmmJB:=c8KE2
+V_Z^TFj8Dc>iWl?;1KIhVO2
+Z1 dC:\Users\itsch\OneDrive\Documents\CE213\doan\version1
+w1778668227
+8sw_decoder.v
+Fsw_decoder.v
+L0 6
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1778668262.095000
+!s107 user_ctrl.v|sw_decoder.v|
+!s90 -work|msim_work|sw_decoder.v|user_ctrl.v|
+!s101 -O0
+o-work msim_work -O0
