@@ -1,0 +1,151 @@
+// =============================================================================
+// audio_loopback.v  – Top-level đã dọn sạch
+//   KEY[0] = Reset
+//   KEY[1] = Reset gain về mức 1
+//   KEY[2] = Tăng gain (1→2→...→8→1)
+//   SW[0]  = 0: Mute / 1: Unmute
+//   HEX0   = Hiển thị mức gain 1..8
+//   LEDG[1] = BCLK đang chạy
+//   LEDG[2] = LRCLK đang chạy
+//   LEDG[3] = ADC valid đang có
+//   LEDG[4] = Sign bit kênh trái
+//   LEDG[5] = Sign bit kênh phải
+// =============================================================================
+module audio_loopback (
+    input  wire        CLOCK_50,
+    input  wire [3:0]  KEY,
+    input  wire [17:0] SW,
+    output wire [7:0]  LEDG,
+    output wire [6:0]  HEX0,
+    output wire        I2C_SCLK,
+    inout  wire        I2C_SDAT,
+    output wire        AUD_XCK,
+    input  wire        AUD_BCLK,
+    input  wire        AUD_DACLRCK,
+    input  wire        AUD_ADCLRCK,
+    input  wire        AUD_ADCDAT,
+    output wire        AUD_DACDAT
+);
+
+wire rst_n = KEY[3];
+wire reset  = ~rst_n;
+
+// ---------------------------------------------------------------------------
+// 1. PLL: tạo clock cho codec (CLOCK_50 → 12.288 MHz)
+// ---------------------------------------------------------------------------
+audio_pll u_audio_pll (
+    .inclk0 (CLOCK_50),
+    .c0     (AUD_XCK)
+);
+
+// ---------------------------------------------------------------------------
+// 2. Cấu hình WM8731 qua I2C
+// ---------------------------------------------------------------------------
+i2c_av_config i2c_cfg (
+    .iCLK     (CLOCK_50),
+    .iRST_N   (rst_n),
+    .I2C_SCLK (I2C_SCLK),
+    .I2C_SDAT (I2C_SDAT)
+);
+
+// ---------------------------------------------------------------------------
+// 3. Nhận audio từ ADC
+// ---------------------------------------------------------------------------
+wire signed [15:0] adc_left, adc_right;
+wire               adc_valid;
+
+i2s_receiver i2s_rx (
+    .clk        (CLOCK_50),
+    .reset      (reset),
+    .bclk       (AUD_BCLK),
+    .lrclk      (AUD_ADCLRCK),
+    .sdata      (AUD_ADCDAT),
+    .left_data  (adc_left),
+    .right_data (adc_right),
+    .data_valid (adc_valid)
+);
+
+// ---------------------------------------------------------------------------
+// 4. Điều khiển Gain (KEY[2]=tăng, KEY[1]=reset)
+// ---------------------------------------------------------------------------
+wire [2:0] gain_level;
+
+gain_control gain_ctrl (
+    .clk        (CLOCK_50),
+    .reset      (reset),
+    .key_gain   (KEY[2]),
+    .key_reset  (KEY[1]),
+    .gain_level (gain_level)
+);
+
+// ---------------------------------------------------------------------------
+// 5. Áp dụng Gain
+// ---------------------------------------------------------------------------
+wire signed [15:0] gained_left, gained_right;
+
+audio_gain_apply gain_apply (
+    .in_left    (adc_left),
+    .in_right   (adc_right),
+    .gain_level (gain_level),
+    .out_left   (gained_left),
+    .out_right  (gained_right)
+);
+
+// ---------------------------------------------------------------------------
+// 6. Mute: SW[0]=0 → mute, SW[0]=1 → unmute
+//    Đồng bộ SW vào clock domain 50MHz
+// ---------------------------------------------------------------------------
+reg sw0_r1, sw0_r2;
+always @(posedge CLOCK_50 or posedge reset) begin
+    if (reset) begin sw0_r1 <= 1; sw0_r2 <= 1; end
+    else       begin sw0_r1 <= SW[0]; sw0_r2 <= sw0_r1; end
+end
+wire mute = ~sw0_r2;  // SW[0]=0 → mute=1, SW[0]=1 → mute=0
+
+// ---------------------------------------------------------------------------
+// 7. Gửi ra DAC (có gain + mute)
+// ---------------------------------------------------------------------------
+i2s_transmitter i2s_tx (
+    .clk        (CLOCK_50),
+    .reset      (reset),
+    .bclk       (AUD_BCLK),
+    .lrclk      (AUD_DACLRCK),
+    .left_data  (mute ? 16'sd0 : gained_left),
+    .right_data (mute ? 16'sd0 : gained_right),
+    .sdata      (AUD_DACDAT)
+);
+
+// ---------------------------------------------------------------------------
+// 8. HEX0: hiển thị mức gain 1..8
+// ---------------------------------------------------------------------------
+hex7seg hex_disp (
+    .num (gain_level + 3'd1),
+    .hex (HEX0)
+);
+
+// ---------------------------------------------------------------------------
+// 9. LED debug
+// ---------------------------------------------------------------------------
+reg [25:0] bclk_cnt, lrck_cnt;
+always @(posedge AUD_BCLK    or posedge reset) begin
+    if (reset) bclk_cnt <= 0; else bclk_cnt <= bclk_cnt + 1;
+end
+always @(posedge AUD_DACLRCK or posedge reset) begin
+    if (reset) lrck_cnt <= 0; else lrck_cnt <= lrck_cnt + 1;
+end
+
+reg [23:0] valid_cnt;
+always @(posedge CLOCK_50 or posedge reset) begin
+    if (reset) valid_cnt <= 0;
+    else if (adc_valid) valid_cnt <= valid_cnt + 1;
+end
+
+assign LEDG[0] = mute;           // sáng = đang mute
+assign LEDG[1] = bclk_cnt[23];   // nhấp nháy = BCLK đang chạy
+assign LEDG[2] = lrck_cnt[15];   // nhấp nháy = LRCLK đang chạy
+assign LEDG[3] = valid_cnt[15];  // nhấp nháy = ADC valid đang có
+assign LEDG[4] = adc_left[15];   // sign bit kênh trái
+assign LEDG[5] = adc_right[15];  // sign bit kênh phải
+assign LEDG[7:6] = 2'b00;
+
+endmodule

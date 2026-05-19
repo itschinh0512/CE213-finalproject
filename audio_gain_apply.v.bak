@@ -1,0 +1,76 @@
+// =============================================================================
+// audio_gain_apply.v - gain mạnh hơn, nghe rõ sự khác biệt
+//
+// Vấn đề cũ: nhân x1..x8 nghe gần như không khác vì dynamic range của
+// tín hiệu audio 16-bit rất lớn (−32768..+32767).
+// Nhân x2 chỉ tăng 6dB, nhưng nếu tín hiệu gốc đã nhỏ thì vẫn nhỏ.
+//
+// Giải pháp: dùng bảng gain lớn hơn, bước nhảy rõ hơn:
+//   Mức 1 (gain_level=0): x1   (0 dB)   - gốc
+//   Mức 2 (gain_level=1): x2   (+6 dB)
+//   Mức 3 (gain_level=2): x4   (+12 dB)
+//   Mức 4 (gain_level=3): x8   (+18 dB)
+//   Mức 5 (gain_level=4): x16  (+24 dB)
+//   Mức 6 (gain_level=5): x32  (+30 dB)
+//   Mức 7 (gain_level=6): x64  (+36 dB)
+//   Mức 8 (gain_level=7): x128 (+42 dB)
+//
+// Mỗi bước tăng 6dB → tai người nghe rõ ràng sự khác biệt
+// Clamp về [-32768..+32767] để tránh vỡ tiếng
+// =============================================================================
+module audio_gain_apply (
+    input  wire        clk,
+    input  wire        reset,
+    input  wire signed [15:0] in_left,
+    input  wire signed [15:0] in_right,
+    input  wire        data_valid,
+    input  wire [2:0]  gain_level,
+    output reg  signed [15:0] out_left,
+    output reg  signed [15:0] out_right,
+    output reg         out_valid
+);
+
+// Mở rộng 16-bit → 32-bit có dấu trước khi dịch
+wire signed [31:0] ext_left  = {{16{in_left[15]}},  in_left};
+wire signed [31:0] ext_right = {{16{in_right[15]}}, in_right};
+
+reg signed [31:0] tmp_l, tmp_r;
+
+// Hàm clamp nội tuyến
+function signed [15:0] clamp16;
+    input signed [31:0] x;
+    begin
+        if      (x >  32'sd32767) clamp16 =  16'sd32767;
+        else if (x < -32'sd32768) clamp16 = -16'sd32768;
+        else                      clamp16 = x[15:0];
+    end
+endfunction
+
+always @(posedge clk or posedge reset) begin
+    if (reset) begin
+        out_left  <= 0;
+        out_right <= 0;
+        out_valid <= 0;
+    end else begin
+        out_valid <= 0;
+        if (data_valid) begin
+            // Dịch trái có dấu = nhân 2^n, mỗi bước +6dB
+            case (gain_level)
+                3'd0: begin tmp_l = ext_left;       tmp_r = ext_right;       end // x1
+                3'd1: begin tmp_l = ext_left <<< 1; tmp_r = ext_right <<< 1; end // x2
+                3'd2: begin tmp_l = ext_left <<< 2; tmp_r = ext_right <<< 2; end // x4
+                3'd3: begin tmp_l = ext_left <<< 3; tmp_r = ext_right <<< 3; end // x8
+                3'd4: begin tmp_l = ext_left <<< 4; tmp_r = ext_right <<< 4; end // x16
+                3'd5: begin tmp_l = ext_left <<< 5; tmp_r = ext_right <<< 5; end // x32
+                3'd6: begin tmp_l = ext_left <<< 6; tmp_r = ext_right <<< 6; end // x64
+                3'd7: begin tmp_l = ext_left <<< 7; tmp_r = ext_right <<< 7; end // x128
+            endcase
+
+            out_left  <= clamp16(tmp_l);
+            out_right <= clamp16(tmp_r);
+            out_valid <= 1;
+        end
+    end
+end
+
+endmodule
