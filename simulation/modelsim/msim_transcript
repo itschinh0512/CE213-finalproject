@@ -1,0 +1,82 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# ERROR: No extended dataflow license exists
+# do vga_sync_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+E:/CE213.Q23/DoAnCE213.Q23/lyrics_vga_top {E:/CE213.Q23/DoAnCE213.Q23/lyrics_vga_top/vga_sync.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module vga_sync
+# 
+# Top level modules:
+# 	vga_sync
+# 
+vlog -reportprogress 300 -work work E:/CE213.Q23/DoAnCE213.Q23/lyrics_vga_top/simulation/modelsim/vga_sync.vo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module vga_sync
+# 
+# Top level modules:
+# 	vga_sync
+vlog -reportprogress 300 -work work E:/CE213.Q23/DoAnCE213.Q23/lyrics_vga_top/simulation/modelsim/vga_sync.vo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module vga_sync
+# 
+# Top level modules:
+# 	vga_sync
+vlog -reportprogress 30 -work work E:/CE213.Q23/DoAnCE213.Q23/lyrics_vga_top/simulation/modelsim/vga_sync_fast.vo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module vga_sync
+# 
+# Top level modules:
+# 	vga_sync
+# Load canceled
+vlog -reportprogress 300 -work work E:/CE213.Q23/DoAnCE213.Q23/lyrics_vga_top/tb_vga_sync.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_vga_sync
+# 
+# Top level modules:
+# 	tb_vga_sync
+vlog -reportprogress 300 -work work E:/CE213.Q23/DoAnCE213.Q23/lyrics_vga_top/vga_sync.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module vga_sync
+# 
+# Top level modules:
+# 	vga_sync
+vsim +altera -do vga_sync_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_vga_sync
+# vsim +altera -do vga_sync_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_vga_sync 
+# Loading work.tb_vga_sync
+# Loading work.vga_sync
+# do vga_sync_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+E:/CE213.Q23/DoAnCE213.Q23/lyrics_vga_top {E:/CE213.Q23/DoAnCE213.Q23/lyrics_vga_top/vga_sync.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module vga_sync
+# 
+# Top level modules:
+# 	vga_sync
+# 
+add wave  \
+sim:/tb_vga_sync/clk \
+sim:/tb_vga_sync/reset_n \
+sim:/tb_vga_sync/VGA_HS \
+sim:/tb_vga_sync/VGA_VS \
+sim:/tb_vga_sync/video_on \
+sim:/tb_vga_sync/pixel_tick \
+sim:/tb_vga_sync/pixel_x \
+sim:/tb_vga_sync/pixel_y
+run 5 ms
+run -all
+# Break in Module tb_vga_sync at E:/CE213.Q23/DoAnCE213.Q23/lyrics_vga_top/tb_vga_sync.v line 40

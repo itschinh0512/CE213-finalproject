@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="vga_sync">
+		<CBX_INST_ENTRY INSTANCE_NAME="|lyrics_vga_top|text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0" CBX_FILE_NAME="altsyncram_2271.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lyrics_vga_top|text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0" CBX_FILE_NAME="altsyncram_8871.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

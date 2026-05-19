@@ -1,0 +1,1168 @@
+TimeQuest Timing Analyzer report for vga_sync
+Fri May 15 14:04:38 2026
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow Model Fmax Summary
+  7. Slow Model Setup Summary
+  8. Slow Model Hold Summary
+  9. Slow Model Recovery Summary
+ 10. Slow Model Removal Summary
+ 11. Slow Model Minimum Pulse Width Summary
+ 12. Slow Model Setup: 'CLOCK_50'
+ 13. Slow Model Hold: 'CLOCK_50'
+ 14. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Fast Model Setup Summary
+ 20. Fast Model Hold Summary
+ 21. Fast Model Recovery Summary
+ 22. Fast Model Removal Summary
+ 23. Fast Model Minimum Pulse Width Summary
+ 24. Fast Model Setup: 'CLOCK_50'
+ 25. Fast Model Hold: 'CLOCK_50'
+ 26. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 27. Setup Times
+ 28. Hold Times
+ 29. Clock to Output Times
+ 30. Minimum Clock to Output Times
+ 31. Multicorner Timing Analysis Summary
+ 32. Setup Times
+ 33. Hold Times
+ 34. Clock to Output Times
+ 35. Minimum Clock to Output Times
+ 36. Setup Transfers
+ 37. Hold Transfers
+ 38. Report TCCS
+ 39. Report RSKM
+ 40. Unconstrained Paths
+ 41. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; vga_sync                                                          ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------+
+; SDC File List                                     ;
++---------------+--------+--------------------------+
+; SDC File Path ; Status ; Read at                  ;
++---------------+--------+--------------------------+
+; vga_sync.sdc  ; OK     ; Fri May 15 14:04:37 2026 ;
++---------------+--------+--------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLOCK_50   ; Base ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 } ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 153.52 MHz ; 153.52 MHz      ; CLOCK_50   ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------+
+; Slow Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; 13.486 ; 0.000         ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.391 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++----------+-------+---------------------+
+; Clock    ; Slack ; End Point TNS       ;
++----------+-------+---------------------+
+; CLOCK_50 ; 8.077 ; 0.000               ;
++----------+-------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                                                                                                                                                                                   ;
++--------+----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                                              ; To Node                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; 13.486 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.494      ;
+; 13.486 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg1  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.494      ;
+; 13.486 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.494      ;
+; 13.486 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg3  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.494      ;
+; 13.486 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg4  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.494      ;
+; 13.486 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg5  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.494      ;
+; 13.486 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg6  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.494      ;
+; 13.486 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg7  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.494      ;
+; 13.486 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg8  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.494      ;
+; 13.486 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg9  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.494      ;
+; 13.486 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg10 ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.494      ;
+; 13.487 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.493      ;
+; 13.487 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg1  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.493      ;
+; 13.487 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.493      ;
+; 13.487 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg3  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.493      ;
+; 13.487 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg4  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.493      ;
+; 13.487 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg5  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.493      ;
+; 13.487 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg6  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.493      ;
+; 13.487 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg7  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.493      ;
+; 13.487 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg8  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.493      ;
+; 13.487 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg9  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.493      ;
+; 13.487 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg10 ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.493      ;
+; 13.490 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.490      ;
+; 13.490 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg1  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.490      ;
+; 13.490 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.490      ;
+; 13.490 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg3  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.490      ;
+; 13.490 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg4  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.490      ;
+; 13.490 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg5  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.490      ;
+; 13.490 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg6  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.490      ;
+; 13.490 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg7  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.490      ;
+; 13.490 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg8  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.490      ;
+; 13.490 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg9  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.490      ;
+; 13.490 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg10 ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.490      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg1  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg3  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg4  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg5  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg6  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg7  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg8  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg9  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg10 ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg1  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg3  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg4  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg5  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg6  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg7  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg8  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg9  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.491 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg10 ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.489      ;
+; 13.493 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.487      ;
+; 13.493 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg1  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.487      ;
+; 13.493 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.487      ;
+; 13.493 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg3  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.487      ;
+; 13.493 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg4  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.487      ;
+; 13.493 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg5  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.487      ;
+; 13.493 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg6  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.487      ;
+; 13.493 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg7  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.487      ;
+; 13.493 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg8  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.487      ;
+; 13.493 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg9  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.487      ;
+; 13.493 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg10 ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.056     ; 6.487      ;
+; 13.660 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg0  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.322      ;
+; 13.660 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg1  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.322      ;
+; 13.660 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg2  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.322      ;
+; 13.660 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg3  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.322      ;
+; 13.660 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg4  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.322      ;
+; 13.660 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg5  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.322      ;
+; 13.660 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg6  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.322      ;
+; 13.660 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg7  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.322      ;
+; 13.660 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg8  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.322      ;
+; 13.660 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg9  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.322      ;
+; 13.660 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg10 ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.322      ;
+; 13.661 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg0  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.321      ;
+; 13.661 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg1  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.321      ;
+; 13.661 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg2  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.321      ;
+; 13.661 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg3  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.321      ;
+; 13.661 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg4  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.321      ;
+; 13.661 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg5  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.321      ;
+; 13.661 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg6  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.321      ;
+; 13.661 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg7  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.321      ;
+; 13.661 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg8  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.321      ;
+; 13.661 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg9  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.321      ;
+; 13.661 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg10 ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.321      ;
+; 13.664 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg0  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.318      ;
+; 13.664 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg1  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.318      ;
+; 13.664 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg2  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.318      ;
+; 13.664 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg3  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.318      ;
+; 13.664 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg4  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.318      ;
+; 13.664 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg5  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.318      ;
+; 13.664 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg6  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.318      ;
+; 13.664 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg7  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.318      ;
+; 13.664 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg8  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.318      ;
+; 13.664 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg9  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.318      ;
+; 13.664 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg10 ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.318      ;
+; 13.665 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg0  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.054     ; 6.317      ;
++--------+----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                                                                                                                                                      ;
++-------+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                  ; To Node                                                                                                                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; vga_sync:u_vga_sync|pixel_q                ; vga_sync:u_vga_sync|pixel_q                                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.521 ; lyric_controller:u_lyric_ctrl|auto_cnt[27] ; lyric_controller:u_lyric_ctrl|auto_cnt[27]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.787      ;
+; 0.524 ; text_renderer:u_text_renderer|font_x_d1[2] ; text_renderer:u_text_renderer|font_x_d2[2]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.790      ;
+; 0.656 ; text_renderer:u_text_renderer|font_x_d1[1] ; text_renderer:u_text_renderer|font_x_d2[1]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.922      ;
+; 0.678 ; text_renderer:u_text_renderer|font_y_d1[3] ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg3 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.060      ; 0.972      ;
+; 0.679 ; text_renderer:u_text_renderer|font_y_d1[1] ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.060      ; 0.973      ;
+; 0.682 ; text_renderer:u_text_renderer|font_y_d1[0] ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg0 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.060      ; 0.976      ;
+; 0.685 ; text_renderer:u_text_renderer|font_y_d1[2] ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg2 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.060      ; 0.979      ;
+; 0.795 ; lyric_controller:u_lyric_ctrl|auto_cnt[14] ; lyric_controller:u_lyric_ctrl|auto_cnt[14]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.061      ;
+; 0.801 ; lyric_controller:u_lyric_ctrl|auto_cnt[7]  ; lyric_controller:u_lyric_ctrl|auto_cnt[7]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.067      ;
+; 0.806 ; lyric_controller:u_lyric_ctrl|auto_cnt[9]  ; lyric_controller:u_lyric_ctrl|auto_cnt[9]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; lyric_controller:u_lyric_ctrl|auto_cnt[11] ; lyric_controller:u_lyric_ctrl|auto_cnt[11]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; lyric_controller:u_lyric_ctrl|auto_cnt[12] ; lyric_controller:u_lyric_ctrl|auto_cnt[12]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; lyric_controller:u_lyric_ctrl|auto_cnt[13] ; lyric_controller:u_lyric_ctrl|auto_cnt[13]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; lyric_controller:u_lyric_ctrl|auto_cnt[23] ; lyric_controller:u_lyric_ctrl|auto_cnt[23]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.809 ; lyric_controller:u_lyric_ctrl|auto_cnt[15] ; lyric_controller:u_lyric_ctrl|auto_cnt[15]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.075      ;
+; 0.810 ; vga_sync:u_vga_sync|v_count[7]             ; vga_sync:u_vga_sync|v_count[7]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; lyric_controller:u_lyric_ctrl|auto_cnt[25] ; lyric_controller:u_lyric_ctrl|auto_cnt[25]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.076      ;
+; 0.812 ; vga_sync:u_vga_sync|v_count[4]             ; vga_sync:u_vga_sync|v_count[4]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.078      ;
+; 0.813 ; lyric_controller:u_lyric_ctrl|auto_cnt[16] ; lyric_controller:u_lyric_ctrl|auto_cnt[16]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.079      ;
+; 0.814 ; lyric_controller:u_lyric_ctrl|auto_cnt[18] ; lyric_controller:u_lyric_ctrl|auto_cnt[18]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.080      ;
+; 0.815 ; vga_sync:u_vga_sync|v_count[1]             ; vga_sync:u_vga_sync|v_count[1]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.081      ;
+; 0.815 ; lyric_controller:u_lyric_ctrl|auto_cnt[0]  ; lyric_controller:u_lyric_ctrl|auto_cnt[0]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.081      ;
+; 0.815 ; lyric_controller:u_lyric_ctrl|auto_cnt[2]  ; lyric_controller:u_lyric_ctrl|auto_cnt[2]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.081      ;
+; 0.815 ; lyric_controller:u_lyric_ctrl|auto_cnt[5]  ; lyric_controller:u_lyric_ctrl|auto_cnt[5]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.081      ;
+; 0.815 ; lyric_controller:u_lyric_ctrl|auto_cnt[21] ; lyric_controller:u_lyric_ctrl|auto_cnt[21]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.081      ;
+; 0.816 ; vga_sync:u_vga_sync|h_count[6]             ; vga_sync:u_vga_sync|h_count[6]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.082      ;
+; 0.820 ; text_renderer:u_text_renderer|font_x_d2[2] ; text_renderer:u_text_renderer|vga_r[3]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.086      ;
+; 0.830 ; vga_sync:u_vga_sync|h_count[1]             ; vga_sync:u_vga_sync|h_count[1]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.096      ;
+; 0.837 ; lyric_controller:u_lyric_ctrl|auto_cnt[6]  ; lyric_controller:u_lyric_ctrl|auto_cnt[6]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.103      ;
+; 0.837 ; text_renderer:u_text_renderer|font_x_d1[0] ; text_renderer:u_text_renderer|font_x_d2[0]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 1.102      ;
+; 0.838 ; vga_sync:u_vga_sync|h_count[4]             ; vga_sync:u_vga_sync|h_count[4]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; vga_sync:u_vga_sync|v_count[5]             ; vga_sync:u_vga_sync|v_count[5]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; vga_sync:u_vga_sync|v_count[6]             ; vga_sync:u_vga_sync|v_count[6]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; lyric_controller:u_lyric_ctrl|auto_cnt[22] ; lyric_controller:u_lyric_ctrl|auto_cnt[22]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.842 ; lyric_controller:u_lyric_ctrl|auto_cnt[8]  ; lyric_controller:u_lyric_ctrl|auto_cnt[8]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.108      ;
+; 0.842 ; lyric_controller:u_lyric_ctrl|auto_cnt[10] ; lyric_controller:u_lyric_ctrl|auto_cnt[10]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.108      ;
+; 0.842 ; lyric_controller:u_lyric_ctrl|auto_cnt[24] ; lyric_controller:u_lyric_ctrl|auto_cnt[24]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.108      ;
+; 0.842 ; lyric_controller:u_lyric_ctrl|auto_cnt[26] ; lyric_controller:u_lyric_ctrl|auto_cnt[26]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.108      ;
+; 0.844 ; vga_sync:u_vga_sync|h_count[7]             ; vga_sync:u_vga_sync|h_count[7]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.110      ;
+; 0.844 ; vga_sync:u_vga_sync|v_count[8]             ; vga_sync:u_vga_sync|v_count[8]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.110      ;
+; 0.845 ; lyric_controller:u_lyric_ctrl|auto_cnt[17] ; lyric_controller:u_lyric_ctrl|auto_cnt[17]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.111      ;
+; 0.846 ; lyric_controller:u_lyric_ctrl|auto_cnt[1]  ; lyric_controller:u_lyric_ctrl|auto_cnt[1]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.112      ;
+; 0.846 ; lyric_controller:u_lyric_ctrl|auto_cnt[19] ; lyric_controller:u_lyric_ctrl|auto_cnt[19]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.112      ;
+; 0.846 ; lyric_controller:u_lyric_ctrl|auto_cnt[20] ; lyric_controller:u_lyric_ctrl|auto_cnt[20]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.112      ;
+; 0.847 ; lyric_controller:u_lyric_ctrl|auto_cnt[3]  ; lyric_controller:u_lyric_ctrl|auto_cnt[3]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.113      ;
+; 0.847 ; lyric_controller:u_lyric_ctrl|auto_cnt[4]  ; lyric_controller:u_lyric_ctrl|auto_cnt[4]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.113      ;
+; 0.853 ; vga_sync:u_vga_sync|h_count[0]             ; vga_sync:u_vga_sync|h_count[0]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.119      ;
+; 0.853 ; vga_sync:u_vga_sync|h_count[2]             ; vga_sync:u_vga_sync|h_count[2]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.119      ;
+; 0.853 ; vga_sync:u_vga_sync|h_count[3]             ; vga_sync:u_vga_sync|h_count[3]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.119      ;
+; 0.864 ; vga_sync:u_vga_sync|v_count[4]             ; text_renderer:u_text_renderer|in_lyric_d1                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.130      ;
+; 0.920 ; text_renderer:u_text_renderer|in_lyric_d2  ; text_renderer:u_text_renderer|vga_r[3]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.186      ;
+; 0.926 ; text_renderer:u_text_renderer|video_on_d1  ; text_renderer:u_text_renderer|video_on_d2                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 1.191      ;
+; 0.960 ; vga_sync:u_vga_sync|h_count[2]             ; vga_sync:u_vga_sync|h_count[5]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.226      ;
+; 0.962 ; vga_sync:u_vga_sync|v_count[9]             ; vga_sync:u_vga_sync|v_count[9]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.228      ;
+; 0.969 ; vga_sync:u_vga_sync|h_count[2]             ; vga_sync:u_vga_sync|h_count[8]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.235      ;
+; 0.969 ; vga_sync:u_vga_sync|h_count[2]             ; vga_sync:u_vga_sync|h_count[9]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.235      ;
+; 0.971 ; vga_sync:u_vga_sync|v_count[0]             ; text_renderer:u_text_renderer|font_y_d1[0]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.233      ;
+; 0.972 ; vga_sync:u_vga_sync|v_count[2]             ; vga_sync:u_vga_sync|v_count[2]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.238      ;
+; 0.973 ; text_renderer:u_text_renderer|font_y_d1[2] ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.055      ; 1.262      ;
+; 0.976 ; text_renderer:u_text_renderer|font_y_d1[0] ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.055      ; 1.265      ;
+; 0.992 ; vga_sync:u_vga_sync|v_count[1]             ; text_renderer:u_text_renderer|font_y_d1[1]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.004     ; 1.254      ;
+; 1.052 ; text_renderer:u_text_renderer|video_on_d2  ; text_renderer:u_text_renderer|vga_r[3]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.318      ;
+; 1.061 ; vga_sync:u_vga_sync|h_count[9]             ; vga_sync:u_vga_sync|h_count[9]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.327      ;
+; 1.075 ; lyric_controller:u_lyric_ctrl|line_reg[4]  ; lyric_controller:u_lyric_ctrl|line_reg[4]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.341      ;
+; 1.075 ; lyric_controller:u_lyric_ctrl|line_reg[1]  ; lyric_controller:u_lyric_ctrl|line_reg[2]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.341      ;
+; 1.088 ; vga_sync:u_vga_sync|h_count[7]             ; vga_sync:u_vga_sync|h_count[5]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.354      ;
+; 1.097 ; vga_sync:u_vga_sync|h_count[7]             ; vga_sync:u_vga_sync|h_count[8]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.363      ;
+; 1.097 ; vga_sync:u_vga_sync|h_count[7]             ; vga_sync:u_vga_sync|h_count[9]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.363      ;
+; 1.105 ; text_renderer:u_text_renderer|in_lyric_d1  ; text_renderer:u_text_renderer|in_lyric_d2                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.005     ; 1.366      ;
+; 1.110 ; vga_sync:u_vga_sync|h_count[0]             ; vga_sync:u_vga_sync|h_count[8]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.376      ;
+; 1.151 ; vga_sync:u_vga_sync|pixel_q                ; vga_sync:u_vga_sync|h_count[0]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.417      ;
+; 1.151 ; vga_sync:u_vga_sync|pixel_q                ; vga_sync:u_vga_sync|h_count[1]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.417      ;
+; 1.151 ; vga_sync:u_vga_sync|pixel_q                ; vga_sync:u_vga_sync|h_count[2]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.417      ;
+; 1.151 ; vga_sync:u_vga_sync|pixel_q                ; vga_sync:u_vga_sync|h_count[3]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.417      ;
+; 1.151 ; vga_sync:u_vga_sync|pixel_q                ; vga_sync:u_vga_sync|h_count[4]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.417      ;
+; 1.151 ; vga_sync:u_vga_sync|pixel_q                ; vga_sync:u_vga_sync|h_count[6]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.417      ;
+; 1.151 ; vga_sync:u_vga_sync|pixel_q                ; vga_sync:u_vga_sync|h_count[7]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.417      ;
+; 1.151 ; vga_sync:u_vga_sync|pixel_q                ; vga_sync:u_vga_sync|h_count[8]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.417      ;
+; 1.151 ; vga_sync:u_vga_sync|pixel_q                ; vga_sync:u_vga_sync|h_count[9]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.417      ;
+; 1.151 ; vga_sync:u_vga_sync|pixel_q                ; vga_sync:u_vga_sync|h_count[5]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.417      ;
+; 1.162 ; vga_sync:u_vga_sync|h_count[6]             ; text_renderer:u_text_renderer|in_lyric_d1                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.428      ;
+; 1.175 ; text_renderer:u_text_renderer|font_x_d2[1] ; text_renderer:u_text_renderer|vga_r[3]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.441      ;
+; 1.178 ; lyric_controller:u_lyric_ctrl|auto_cnt[14] ; lyric_controller:u_lyric_ctrl|auto_cnt[15]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.444      ;
+; 1.184 ; lyric_controller:u_lyric_ctrl|auto_cnt[7]  ; lyric_controller:u_lyric_ctrl|auto_cnt[8]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.450      ;
+; 1.189 ; lyric_controller:u_lyric_ctrl|auto_cnt[11] ; lyric_controller:u_lyric_ctrl|auto_cnt[12]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; lyric_controller:u_lyric_ctrl|auto_cnt[12] ; lyric_controller:u_lyric_ctrl|auto_cnt[13]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; lyric_controller:u_lyric_ctrl|auto_cnt[9]  ; lyric_controller:u_lyric_ctrl|auto_cnt[10]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; lyric_controller:u_lyric_ctrl|auto_cnt[23] ; lyric_controller:u_lyric_ctrl|auto_cnt[24]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.455      ;
+; 1.192 ; lyric_controller:u_lyric_ctrl|auto_cnt[15] ; lyric_controller:u_lyric_ctrl|auto_cnt[16]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.458      ;
+; 1.192 ; vga_sync:u_vga_sync|h_count[5]             ; vga_sync:u_vga_sync|h_count[6]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.458      ;
+; 1.193 ; lyric_controller:u_lyric_ctrl|auto_cnt[25] ; lyric_controller:u_lyric_ctrl|auto_cnt[26]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.459      ;
+; 1.195 ; vga_sync:u_vga_sync|v_count[4]             ; vga_sync:u_vga_sync|v_count[5]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.461      ;
+; 1.196 ; vga_sync:u_vga_sync|v_count[2]             ; vga_sync:u_vga_sync|v_count[0]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.462      ;
+; 1.196 ; lyric_controller:u_lyric_ctrl|auto_cnt[16] ; lyric_controller:u_lyric_ctrl|auto_cnt[17]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.462      ;
+; 1.196 ; vga_sync:u_vga_sync|v_count[2]             ; vga_sync:u_vga_sync|v_count[9]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.462      ;
+; 1.197 ; vga_sync:u_vga_sync|v_count[2]             ; vga_sync:u_vga_sync|v_count[3]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.463      ;
+; 1.197 ; lyric_controller:u_lyric_ctrl|auto_cnt[18] ; lyric_controller:u_lyric_ctrl|auto_cnt[19]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.463      ;
+; 1.198 ; lyric_controller:u_lyric_ctrl|auto_cnt[0]  ; lyric_controller:u_lyric_ctrl|auto_cnt[1]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.464      ;
+; 1.198 ; lyric_controller:u_lyric_ctrl|auto_cnt[2]  ; lyric_controller:u_lyric_ctrl|auto_cnt[3]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.464      ;
++-------+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                                                                                                                                                  ;
++-------+--------------+----------------+------------------+----------+------------+------------------------------------------------------------------------------------------------------------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                                                                   ;
++-------+--------------+----------------+------------------+----------+------------+------------------------------------------------------------------------------------------------------------------------------------------+
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg1    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg1    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg10   ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg10   ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg3    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg3    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg4    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg4    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg5    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg5    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg6    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg6    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg7    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg7    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg8    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg8    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg9    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg9    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg0    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg0    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg1    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg1    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg10   ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg10   ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg2    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg2    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg3    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg3    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg4    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg4    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg5    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg5    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg6    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg6    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg7    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg7    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg8    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg8    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg9    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg9    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg0    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg0    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg1    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg1    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg10   ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg10   ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg2    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg2    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg3    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg3    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg4    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg4    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg5    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg5    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg6    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg6    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg7    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg7    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg8    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg8    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg9    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg9    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg0    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg0    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg1    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg1    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg10   ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg10   ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg2    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg2    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg3    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg3    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg4    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg4    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg5    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg5    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg6    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg6    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg7    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg7    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg8    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg8    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg9    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg9    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg0  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg0  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg1  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg1  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg10 ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg10 ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg2  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg2  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg3  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg3  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg4  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg4  ;
++-------+--------------+----------------+------------------+----------+------------+------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY1      ; CLOCK_50   ; 6.274 ; 6.274 ; Rise       ; CLOCK_50        ;
+; KEY2      ; CLOCK_50   ; 6.162 ; 6.162 ; Rise       ; CLOCK_50        ;
+; SW0       ; CLOCK_50   ; 1.395 ; 1.395 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY1      ; CLOCK_50   ; -3.810 ; -3.810 ; Rise       ; CLOCK_50        ;
+; KEY2      ; CLOCK_50   ; -3.875 ; -3.875 ; Rise       ; CLOCK_50        ;
+; SW0       ; CLOCK_50   ; -0.595 ; -0.595 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; VGA_BLANK_N ; CLOCK_50   ; 10.459 ; 10.459 ; Rise       ; CLOCK_50        ;
+; VGA_CLK     ; CLOCK_50   ; 7.991  ; 7.991  ; Rise       ; CLOCK_50        ;
+; VGA_G[*]    ; CLOCK_50   ; 7.259  ; 7.259  ; Rise       ; CLOCK_50        ;
+;  VGA_G[1]   ; CLOCK_50   ; 7.249  ; 7.249  ; Rise       ; CLOCK_50        ;
+;  VGA_G[2]   ; CLOCK_50   ; 7.256  ; 7.256  ; Rise       ; CLOCK_50        ;
+;  VGA_G[3]   ; CLOCK_50   ; 7.259  ; 7.259  ; Rise       ; CLOCK_50        ;
+; VGA_HS      ; CLOCK_50   ; 9.899  ; 9.899  ; Rise       ; CLOCK_50        ;
+; VGA_R[*]    ; CLOCK_50   ; 7.780  ; 7.780  ; Rise       ; CLOCK_50        ;
+;  VGA_R[0]   ; CLOCK_50   ; 7.634  ; 7.634  ; Rise       ; CLOCK_50        ;
+;  VGA_R[1]   ; CLOCK_50   ; 7.780  ; 7.780  ; Rise       ; CLOCK_50        ;
+;  VGA_R[2]   ; CLOCK_50   ; 7.467  ; 7.467  ; Rise       ; CLOCK_50        ;
+;  VGA_R[3]   ; CLOCK_50   ; 7.241  ; 7.241  ; Rise       ; CLOCK_50        ;
+; VGA_VS      ; CLOCK_50   ; 10.148 ; 10.148 ; Rise       ; CLOCK_50        ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; VGA_BLANK_N ; CLOCK_50   ; 9.925 ; 9.925 ; Rise       ; CLOCK_50        ;
+; VGA_CLK     ; CLOCK_50   ; 7.991 ; 7.991 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]    ; CLOCK_50   ; 7.249 ; 7.249 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1]   ; CLOCK_50   ; 7.249 ; 7.249 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2]   ; CLOCK_50   ; 7.256 ; 7.256 ; Rise       ; CLOCK_50        ;
+;  VGA_G[3]   ; CLOCK_50   ; 7.259 ; 7.259 ; Rise       ; CLOCK_50        ;
+; VGA_HS      ; CLOCK_50   ; 9.036 ; 9.036 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]    ; CLOCK_50   ; 7.241 ; 7.241 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0]   ; CLOCK_50   ; 7.634 ; 7.634 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1]   ; CLOCK_50   ; 7.780 ; 7.780 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2]   ; CLOCK_50   ; 7.467 ; 7.467 ; Rise       ; CLOCK_50        ;
+;  VGA_R[3]   ; CLOCK_50   ; 7.241 ; 7.241 ; Rise       ; CLOCK_50        ;
+; VGA_VS      ; CLOCK_50   ; 8.880 ; 8.880 ; Rise       ; CLOCK_50        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------+
+; Fast Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; 16.510 ; 0.000         ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.215 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++----------+-------+---------------------+
+; Clock    ; Slack ; End Point TNS       ;
++----------+-------+---------------------+
+; CLOCK_50 ; 8.077 ; 0.000               ;
++----------+-------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                                                                                                                                                                                   ;
++--------+----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                                              ; To Node                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg1  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg3  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg4  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg5  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg6  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg7  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg8  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg9  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg10 ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg1  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg3  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg4  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg5  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg6  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg7  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg8  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg9  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.510 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg10 ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.460      ;
+; 16.513 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.457      ;
+; 16.513 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg1  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.457      ;
+; 16.513 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.457      ;
+; 16.513 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg3  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.457      ;
+; 16.513 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg4  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.457      ;
+; 16.513 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg5  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.457      ;
+; 16.513 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg6  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.457      ;
+; 16.513 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg7  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.457      ;
+; 16.513 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg8  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.457      ;
+; 16.513 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg9  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.457      ;
+; 16.513 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg10 ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.457      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg1  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg3  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg4  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg5  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg6  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg7  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg8  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg9  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg10 ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg1  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg3  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg4  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg5  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg6  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg7  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg8  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg9  ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.515 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg10 ; text_renderer:u_text_renderer|vga_g[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.455      ;
+; 16.516 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.454      ;
+; 16.516 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg1  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.454      ;
+; 16.516 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.454      ;
+; 16.516 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg3  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.454      ;
+; 16.516 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg4  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.454      ;
+; 16.516 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg5  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.454      ;
+; 16.516 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg6  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.454      ;
+; 16.516 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg7  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.454      ;
+; 16.516 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg8  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.454      ;
+; 16.516 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg9  ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.454      ;
+; 16.516 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg10 ; text_renderer:u_text_renderer|vga_g[3] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.062     ; 3.454      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg0  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg0  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg1  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg2  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg3  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg4  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg5  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg6  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg7  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg8  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg9  ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg10 ; text_renderer:u_text_renderer|vga_r[1] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg1  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg2  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg3  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg4  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg5  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg6  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg7  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg8  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg9  ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.565 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg10 ; text_renderer:u_text_renderer|vga_r[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.407      ;
+; 16.568 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg0  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.404      ;
+; 16.568 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg1  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.404      ;
+; 16.568 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg2  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.404      ;
+; 16.568 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg3  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.404      ;
+; 16.568 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg4  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.404      ;
+; 16.568 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg5  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.404      ;
+; 16.568 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg6  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.404      ;
+; 16.568 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg7  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.404      ;
+; 16.568 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg8  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.404      ;
+; 16.568 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg9  ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.404      ;
+; 16.568 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg10 ; text_renderer:u_text_renderer|vga_g[2] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.404      ;
+; 16.570 ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg0  ; text_renderer:u_text_renderer|vga_r[0] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.060     ; 3.402      ;
++--------+----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                                                                                                                                                      ;
++-------+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                  ; To Node                                                                                                                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; vga_sync:u_vga_sync|pixel_q                ; vga_sync:u_vga_sync|pixel_q                                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.238 ; lyric_controller:u_lyric_ctrl|auto_cnt[27] ; lyric_controller:u_lyric_ctrl|auto_cnt[27]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.390      ;
+; 0.243 ; text_renderer:u_text_renderer|font_x_d1[2] ; text_renderer:u_text_renderer|font_x_d2[2]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.395      ;
+; 0.280 ; text_renderer:u_text_renderer|font_y_d1[3] ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg3 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.066      ; 0.484      ;
+; 0.281 ; text_renderer:u_text_renderer|font_y_d1[1] ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg1 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.066      ; 0.485      ;
+; 0.285 ; text_renderer:u_text_renderer|font_y_d1[0] ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg0 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.066      ; 0.489      ;
+; 0.286 ; text_renderer:u_text_renderer|font_y_d1[2] ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg2 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.066      ; 0.490      ;
+; 0.323 ; text_renderer:u_text_renderer|font_x_d1[1] ; text_renderer:u_text_renderer|font_x_d2[1]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.475      ;
+; 0.355 ; lyric_controller:u_lyric_ctrl|auto_cnt[14] ; lyric_controller:u_lyric_ctrl|auto_cnt[14]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.507      ;
+; 0.360 ; lyric_controller:u_lyric_ctrl|auto_cnt[7]  ; lyric_controller:u_lyric_ctrl|auto_cnt[7]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; lyric_controller:u_lyric_ctrl|auto_cnt[9]  ; lyric_controller:u_lyric_ctrl|auto_cnt[9]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; lyric_controller:u_lyric_ctrl|auto_cnt[11] ; lyric_controller:u_lyric_ctrl|auto_cnt[11]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; lyric_controller:u_lyric_ctrl|auto_cnt[12] ; lyric_controller:u_lyric_ctrl|auto_cnt[12]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; lyric_controller:u_lyric_ctrl|auto_cnt[13] ; lyric_controller:u_lyric_ctrl|auto_cnt[13]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; lyric_controller:u_lyric_ctrl|auto_cnt[15] ; lyric_controller:u_lyric_ctrl|auto_cnt[15]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.362 ; lyric_controller:u_lyric_ctrl|auto_cnt[23] ; lyric_controller:u_lyric_ctrl|auto_cnt[23]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.514      ;
+; 0.363 ; vga_sync:u_vga_sync|v_count[7]             ; vga_sync:u_vga_sync|v_count[7]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; lyric_controller:u_lyric_ctrl|auto_cnt[25] ; lyric_controller:u_lyric_ctrl|auto_cnt[25]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.365 ; vga_sync:u_vga_sync|v_count[1]             ; vga_sync:u_vga_sync|v_count[1]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; vga_sync:u_vga_sync|v_count[4]             ; vga_sync:u_vga_sync|v_count[4]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; text_renderer:u_text_renderer|font_x_d2[2] ; text_renderer:u_text_renderer|vga_r[3]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.366 ; vga_sync:u_vga_sync|h_count[6]             ; vga_sync:u_vga_sync|h_count[6]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.518      ;
+; 0.367 ; lyric_controller:u_lyric_ctrl|auto_cnt[5]  ; lyric_controller:u_lyric_ctrl|auto_cnt[5]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; lyric_controller:u_lyric_ctrl|auto_cnt[16] ; lyric_controller:u_lyric_ctrl|auto_cnt[16]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; lyric_controller:u_lyric_ctrl|auto_cnt[18] ; lyric_controller:u_lyric_ctrl|auto_cnt[18]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.519      ;
+; 0.368 ; lyric_controller:u_lyric_ctrl|auto_cnt[0]  ; lyric_controller:u_lyric_ctrl|auto_cnt[0]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.520      ;
+; 0.368 ; lyric_controller:u_lyric_ctrl|auto_cnt[2]  ; lyric_controller:u_lyric_ctrl|auto_cnt[2]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.520      ;
+; 0.368 ; lyric_controller:u_lyric_ctrl|auto_cnt[21] ; lyric_controller:u_lyric_ctrl|auto_cnt[21]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.520      ;
+; 0.371 ; vga_sync:u_vga_sync|v_count[5]             ; vga_sync:u_vga_sync|v_count[5]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; vga_sync:u_vga_sync|v_count[6]             ; vga_sync:u_vga_sync|v_count[6]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.373 ; lyric_controller:u_lyric_ctrl|auto_cnt[6]  ; lyric_controller:u_lyric_ctrl|auto_cnt[6]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.525      ;
+; 0.373 ; lyric_controller:u_lyric_ctrl|auto_cnt[22] ; lyric_controller:u_lyric_ctrl|auto_cnt[22]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.525      ;
+; 0.374 ; lyric_controller:u_lyric_ctrl|auto_cnt[8]  ; lyric_controller:u_lyric_ctrl|auto_cnt[8]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; lyric_controller:u_lyric_ctrl|auto_cnt[10] ; lyric_controller:u_lyric_ctrl|auto_cnt[10]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; lyric_controller:u_lyric_ctrl|auto_cnt[24] ; lyric_controller:u_lyric_ctrl|auto_cnt[24]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; lyric_controller:u_lyric_ctrl|auto_cnt[26] ; lyric_controller:u_lyric_ctrl|auto_cnt[26]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.375 ; vga_sync:u_vga_sync|h_count[1]             ; vga_sync:u_vga_sync|h_count[1]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; vga_sync:u_vga_sync|h_count[7]             ; vga_sync:u_vga_sync|h_count[7]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; vga_sync:u_vga_sync|v_count[8]             ; vga_sync:u_vga_sync|v_count[8]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.377 ; lyric_controller:u_lyric_ctrl|auto_cnt[17] ; lyric_controller:u_lyric_ctrl|auto_cnt[17]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378 ; vga_sync:u_vga_sync|h_count[4]             ; vga_sync:u_vga_sync|h_count[4]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; lyric_controller:u_lyric_ctrl|auto_cnt[1]  ; lyric_controller:u_lyric_ctrl|auto_cnt[1]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; lyric_controller:u_lyric_ctrl|auto_cnt[3]  ; lyric_controller:u_lyric_ctrl|auto_cnt[3]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; lyric_controller:u_lyric_ctrl|auto_cnt[4]  ; lyric_controller:u_lyric_ctrl|auto_cnt[4]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; lyric_controller:u_lyric_ctrl|auto_cnt[19] ; lyric_controller:u_lyric_ctrl|auto_cnt[19]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; lyric_controller:u_lyric_ctrl|auto_cnt[20] ; lyric_controller:u_lyric_ctrl|auto_cnt[20]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.380 ; vga_sync:u_vga_sync|h_count[0]             ; vga_sync:u_vga_sync|h_count[0]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.532      ;
+; 0.380 ; vga_sync:u_vga_sync|h_count[2]             ; vga_sync:u_vga_sync|h_count[2]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.532      ;
+; 0.380 ; vga_sync:u_vga_sync|h_count[3]             ; vga_sync:u_vga_sync|h_count[3]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.532      ;
+; 0.387 ; vga_sync:u_vga_sync|v_count[4]             ; text_renderer:u_text_renderer|in_lyric_d1                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.539      ;
+; 0.404 ; text_renderer:u_text_renderer|font_x_d1[0] ; text_renderer:u_text_renderer|font_x_d2[0]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.555      ;
+; 0.417 ; text_renderer:u_text_renderer|font_y_d1[2] ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.061      ; 0.616      ;
+; 0.418 ; text_renderer:u_text_renderer|video_on_d1  ; text_renderer:u_text_renderer|video_on_d2                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.569      ;
+; 0.420 ; text_renderer:u_text_renderer|font_y_d1[0] ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.061      ; 0.619      ;
+; 0.427 ; vga_sync:u_vga_sync|h_count[2]             ; vga_sync:u_vga_sync|h_count[5]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.579      ;
+; 0.429 ; vga_sync:u_vga_sync|v_count[9]             ; vga_sync:u_vga_sync|v_count[9]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.581      ;
+; 0.435 ; vga_sync:u_vga_sync|h_count[2]             ; vga_sync:u_vga_sync|h_count[8]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.587      ;
+; 0.435 ; vga_sync:u_vga_sync|h_count[2]             ; vga_sync:u_vga_sync|h_count[9]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.587      ;
+; 0.435 ; vga_sync:u_vga_sync|v_count[2]             ; vga_sync:u_vga_sync|v_count[2]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.587      ;
+; 0.448 ; vga_sync:u_vga_sync|v_count[0]             ; text_renderer:u_text_renderer|font_y_d1[0]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.005     ; 0.595      ;
+; 0.459 ; text_renderer:u_text_renderer|in_lyric_d2  ; text_renderer:u_text_renderer|vga_r[3]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.611      ;
+; 0.461 ; vga_sync:u_vga_sync|v_count[1]             ; text_renderer:u_text_renderer|font_y_d1[1]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.005     ; 0.608      ;
+; 0.467 ; lyric_controller:u_lyric_ctrl|line_reg[1]  ; lyric_controller:u_lyric_ctrl|line_reg[2]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.619      ;
+; 0.469 ; lyric_controller:u_lyric_ctrl|line_reg[4]  ; lyric_controller:u_lyric_ctrl|line_reg[4]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.621      ;
+; 0.476 ; vga_sync:u_vga_sync|h_count[7]             ; vga_sync:u_vga_sync|h_count[5]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.628      ;
+; 0.484 ; vga_sync:u_vga_sync|h_count[7]             ; vga_sync:u_vga_sync|h_count[8]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.636      ;
+; 0.484 ; vga_sync:u_vga_sync|h_count[9]             ; vga_sync:u_vga_sync|h_count[9]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.636      ;
+; 0.484 ; vga_sync:u_vga_sync|h_count[7]             ; vga_sync:u_vga_sync|h_count[9]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.636      ;
+; 0.485 ; text_renderer:u_text_renderer|video_on_d2  ; text_renderer:u_text_renderer|vga_r[3]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.637      ;
+; 0.489 ; vga_sync:u_vga_sync|h_count[0]             ; vga_sync:u_vga_sync|h_count[8]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.641      ;
+; 0.493 ; lyric_controller:u_lyric_ctrl|auto_cnt[14] ; lyric_controller:u_lyric_ctrl|auto_cnt[15]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.645      ;
+; 0.498 ; lyric_controller:u_lyric_ctrl|auto_cnt[7]  ; lyric_controller:u_lyric_ctrl|auto_cnt[8]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; lyric_controller:u_lyric_ctrl|auto_cnt[9]  ; lyric_controller:u_lyric_ctrl|auto_cnt[10]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.650      ;
+; 0.499 ; lyric_controller:u_lyric_ctrl|auto_cnt[11] ; lyric_controller:u_lyric_ctrl|auto_cnt[12]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; lyric_controller:u_lyric_ctrl|auto_cnt[12] ; lyric_controller:u_lyric_ctrl|auto_cnt[13]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; lyric_controller:u_lyric_ctrl|auto_cnt[15] ; lyric_controller:u_lyric_ctrl|auto_cnt[16]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.651      ;
+; 0.500 ; vga_sync:u_vga_sync|h_count[5]             ; vga_sync:u_vga_sync|h_count[6]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.652      ;
+; 0.500 ; lyric_controller:u_lyric_ctrl|auto_cnt[23] ; lyric_controller:u_lyric_ctrl|auto_cnt[24]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.652      ;
+; 0.501 ; lyric_controller:u_lyric_ctrl|auto_cnt[25] ; lyric_controller:u_lyric_ctrl|auto_cnt[26]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.653      ;
+; 0.503 ; vga_sync:u_vga_sync|v_count[4]             ; vga_sync:u_vga_sync|v_count[5]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.655      ;
+; 0.504 ; vga_sync:u_vga_sync|h_count[6]             ; vga_sync:u_vga_sync|h_count[7]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.656      ;
+; 0.505 ; lyric_controller:u_lyric_ctrl|auto_cnt[16] ; lyric_controller:u_lyric_ctrl|auto_cnt[17]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.505 ; lyric_controller:u_lyric_ctrl|auto_cnt[18] ; lyric_controller:u_lyric_ctrl|auto_cnt[19]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.506 ; lyric_controller:u_lyric_ctrl|auto_cnt[0]  ; lyric_controller:u_lyric_ctrl|auto_cnt[1]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.658      ;
+; 0.506 ; lyric_controller:u_lyric_ctrl|auto_cnt[2]  ; lyric_controller:u_lyric_ctrl|auto_cnt[3]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.658      ;
+; 0.511 ; vga_sync:u_vga_sync|v_count[5]             ; vga_sync:u_vga_sync|v_count[6]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.663      ;
+; 0.512 ; vga_sync:u_vga_sync|v_count[6]             ; vga_sync:u_vga_sync|v_count[7]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.664      ;
+; 0.513 ; lyric_controller:u_lyric_ctrl|auto_cnt[6]  ; lyric_controller:u_lyric_ctrl|auto_cnt[7]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.665      ;
+; 0.513 ; lyric_controller:u_lyric_ctrl|auto_cnt[22] ; lyric_controller:u_lyric_ctrl|auto_cnt[23]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.665      ;
+; 0.513 ; vga_sync:u_vga_sync|h_count[1]             ; vga_sync:u_vga_sync|h_count[2]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.665      ;
+; 0.514 ; lyric_controller:u_lyric_ctrl|auto_cnt[26] ; lyric_controller:u_lyric_ctrl|auto_cnt[27]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.666      ;
+; 0.514 ; lyric_controller:u_lyric_ctrl|auto_cnt[8]  ; lyric_controller:u_lyric_ctrl|auto_cnt[9]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.666      ;
+; 0.514 ; lyric_controller:u_lyric_ctrl|auto_cnt[10] ; lyric_controller:u_lyric_ctrl|auto_cnt[11]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.666      ;
+; 0.514 ; lyric_controller:u_lyric_ctrl|auto_cnt[24] ; lyric_controller:u_lyric_ctrl|auto_cnt[25]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.666      ;
+; 0.515 ; vga_sync:u_vga_sync|v_count[0]             ; vga_sync:u_vga_sync|v_count[1]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.667      ;
+; 0.517 ; vga_sync:u_vga_sync|v_count[3]             ; vga_sync:u_vga_sync|v_count[4]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.669      ;
+; 0.517 ; lyric_controller:u_lyric_ctrl|auto_cnt[17] ; lyric_controller:u_lyric_ctrl|auto_cnt[18]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.669      ;
+; 0.518 ; lyric_controller:u_lyric_ctrl|auto_cnt[4]  ; lyric_controller:u_lyric_ctrl|auto_cnt[5]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.670      ;
+; 0.518 ; lyric_controller:u_lyric_ctrl|auto_cnt[1]  ; lyric_controller:u_lyric_ctrl|auto_cnt[2]                                                                                             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.670      ;
+; 0.518 ; lyric_controller:u_lyric_ctrl|auto_cnt[20] ; lyric_controller:u_lyric_ctrl|auto_cnt[21]                                                                                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.670      ;
++-------+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                                                                                                                                                  ;
++-------+--------------+----------------+------------------+----------+------------+------------------------------------------------------------------------------------------------------------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                                                                   ;
++-------+--------------+----------------+------------------+----------+------------+------------------------------------------------------------------------------------------------------------------------------------------+
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg0    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg1    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg1    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg10   ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg10   ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg2    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg3    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg3    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg4    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg4    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg5    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg5    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg6    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg6    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg7    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg7    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg8    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg8    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg9    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a0~porta_address_reg9    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg0    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg0    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg1    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg1    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg10   ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg10   ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg2    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg2    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg3    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg3    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg4    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg4    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg5    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg5    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg6    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg6    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg7    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg7    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg8    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg8    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg9    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a1~porta_address_reg9    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg0    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg0    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg1    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg1    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg10   ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg10   ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg2    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg2    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg3    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg3    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg4    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg4    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg5    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg5    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg6    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg6    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg7    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg7    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg8    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg8    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg9    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a4~porta_address_reg9    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg0    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg0    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg1    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg1    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg10   ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg10   ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg2    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg2    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg3    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg3    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg4    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg4    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg5    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg5    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg6    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg6    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg7    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg7    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg8    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg8    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg9    ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|font_rom:u_font_rom|altsyncram:rom_rtl_0|altsyncram_2271:auto_generated|ram_block1a5~porta_address_reg9    ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg0  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg0  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg1  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg1  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg10 ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg10 ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg2  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg2  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg3  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg3  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg4  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; text_renderer:u_text_renderer|lyric_rom:u_lyric_rom|altsyncram:rom_rtl_0|altsyncram_8871:auto_generated|ram_block1a0~porta_address_reg4  ;
++-------+--------------+----------------+------------------+----------+------------+------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY1      ; CLOCK_50   ; 3.242 ; 3.242 ; Rise       ; CLOCK_50        ;
+; KEY2      ; CLOCK_50   ; 3.199 ; 3.199 ; Rise       ; CLOCK_50        ;
+; SW0       ; CLOCK_50   ; 0.396 ; 0.396 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY1      ; CLOCK_50   ; -2.060 ; -2.060 ; Rise       ; CLOCK_50        ;
+; KEY2      ; CLOCK_50   ; -2.097 ; -2.097 ; Rise       ; CLOCK_50        ;
+; SW0       ; CLOCK_50   ; -0.033 ; -0.033 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; VGA_BLANK_N ; CLOCK_50   ; 5.548 ; 5.548 ; Rise       ; CLOCK_50        ;
+; VGA_CLK     ; CLOCK_50   ; 4.415 ; 4.415 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]    ; CLOCK_50   ; 4.071 ; 4.071 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1]   ; CLOCK_50   ; 4.061 ; 4.061 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2]   ; CLOCK_50   ; 4.069 ; 4.069 ; Rise       ; CLOCK_50        ;
+;  VGA_G[3]   ; CLOCK_50   ; 4.071 ; 4.071 ; Rise       ; CLOCK_50        ;
+; VGA_HS      ; CLOCK_50   ; 5.255 ; 5.255 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]    ; CLOCK_50   ; 4.312 ; 4.312 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0]   ; CLOCK_50   ; 4.266 ; 4.266 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1]   ; CLOCK_50   ; 4.312 ; 4.312 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2]   ; CLOCK_50   ; 4.154 ; 4.154 ; Rise       ; CLOCK_50        ;
+;  VGA_R[3]   ; CLOCK_50   ; 4.056 ; 4.056 ; Rise       ; CLOCK_50        ;
+; VGA_VS      ; CLOCK_50   ; 5.380 ; 5.380 ; Rise       ; CLOCK_50        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; VGA_BLANK_N ; CLOCK_50   ; 5.302 ; 5.302 ; Rise       ; CLOCK_50        ;
+; VGA_CLK     ; CLOCK_50   ; 4.415 ; 4.415 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]    ; CLOCK_50   ; 4.061 ; 4.061 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1]   ; CLOCK_50   ; 4.061 ; 4.061 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2]   ; CLOCK_50   ; 4.069 ; 4.069 ; Rise       ; CLOCK_50        ;
+;  VGA_G[3]   ; CLOCK_50   ; 4.071 ; 4.071 ; Rise       ; CLOCK_50        ;
+; VGA_HS      ; CLOCK_50   ; 4.886 ; 4.886 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]    ; CLOCK_50   ; 4.056 ; 4.056 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0]   ; CLOCK_50   ; 4.266 ; 4.266 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1]   ; CLOCK_50   ; 4.312 ; 4.312 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2]   ; CLOCK_50   ; 4.154 ; 4.154 ; Rise       ; CLOCK_50        ;
+;  VGA_R[3]   ; CLOCK_50   ; 4.056 ; 4.056 ; Rise       ; CLOCK_50        ;
+; VGA_VS      ; CLOCK_50   ; 4.823 ; 4.823 ; Rise       ; CLOCK_50        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; 13.486 ; 0.215 ; N/A      ; N/A     ; 8.077               ;
+;  CLOCK_50        ; 13.486 ; 0.215 ; N/A      ; N/A     ; 8.077               ;
+; Design-wide TNS  ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  CLOCK_50        ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY1      ; CLOCK_50   ; 6.274 ; 6.274 ; Rise       ; CLOCK_50        ;
+; KEY2      ; CLOCK_50   ; 6.162 ; 6.162 ; Rise       ; CLOCK_50        ;
+; SW0       ; CLOCK_50   ; 1.395 ; 1.395 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY1      ; CLOCK_50   ; -2.060 ; -2.060 ; Rise       ; CLOCK_50        ;
+; KEY2      ; CLOCK_50   ; -2.097 ; -2.097 ; Rise       ; CLOCK_50        ;
+; SW0       ; CLOCK_50   ; -0.033 ; -0.033 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; VGA_BLANK_N ; CLOCK_50   ; 10.459 ; 10.459 ; Rise       ; CLOCK_50        ;
+; VGA_CLK     ; CLOCK_50   ; 7.991  ; 7.991  ; Rise       ; CLOCK_50        ;
+; VGA_G[*]    ; CLOCK_50   ; 7.259  ; 7.259  ; Rise       ; CLOCK_50        ;
+;  VGA_G[1]   ; CLOCK_50   ; 7.249  ; 7.249  ; Rise       ; CLOCK_50        ;
+;  VGA_G[2]   ; CLOCK_50   ; 7.256  ; 7.256  ; Rise       ; CLOCK_50        ;
+;  VGA_G[3]   ; CLOCK_50   ; 7.259  ; 7.259  ; Rise       ; CLOCK_50        ;
+; VGA_HS      ; CLOCK_50   ; 9.899  ; 9.899  ; Rise       ; CLOCK_50        ;
+; VGA_R[*]    ; CLOCK_50   ; 7.780  ; 7.780  ; Rise       ; CLOCK_50        ;
+;  VGA_R[0]   ; CLOCK_50   ; 7.634  ; 7.634  ; Rise       ; CLOCK_50        ;
+;  VGA_R[1]   ; CLOCK_50   ; 7.780  ; 7.780  ; Rise       ; CLOCK_50        ;
+;  VGA_R[2]   ; CLOCK_50   ; 7.467  ; 7.467  ; Rise       ; CLOCK_50        ;
+;  VGA_R[3]   ; CLOCK_50   ; 7.241  ; 7.241  ; Rise       ; CLOCK_50        ;
+; VGA_VS      ; CLOCK_50   ; 10.148 ; 10.148 ; Rise       ; CLOCK_50        ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; VGA_BLANK_N ; CLOCK_50   ; 5.302 ; 5.302 ; Rise       ; CLOCK_50        ;
+; VGA_CLK     ; CLOCK_50   ; 4.415 ; 4.415 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]    ; CLOCK_50   ; 4.061 ; 4.061 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1]   ; CLOCK_50   ; 4.061 ; 4.061 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2]   ; CLOCK_50   ; 4.069 ; 4.069 ; Rise       ; CLOCK_50        ;
+;  VGA_G[3]   ; CLOCK_50   ; 4.071 ; 4.071 ; Rise       ; CLOCK_50        ;
+; VGA_HS      ; CLOCK_50   ; 4.886 ; 4.886 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]    ; CLOCK_50   ; 4.056 ; 4.056 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0]   ; CLOCK_50   ; 4.266 ; 4.266 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1]   ; CLOCK_50   ; 4.312 ; 4.312 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2]   ; CLOCK_50   ; 4.154 ; 4.154 ; Rise       ; CLOCK_50        ;
+;  VGA_R[3]   ; CLOCK_50   ; 4.056 ; 4.056 ; Rise       ; CLOCK_50        ;
+; VGA_VS      ; CLOCK_50   ; 4.823 ; 4.823 ; Rise       ; CLOCK_50        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 4294     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 4294     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 122   ; 122  ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
+; Unconstrained Output Port Paths ; 31    ; 31   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Fri May 15 14:04:37 2026
+Info: Command: quartus_sta vga_sync -c vga_sync
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (332104): Reading SDC File: 'vga_sync.sdc'
+Warning (332153): Family doesn't support jitter analysis.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Info (332146): Worst-case setup slack is 13.486
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    13.486         0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 8.077
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     8.077         0.000 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 16.510
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    16.510         0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 8.077
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     8.077         0.000 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4566 megabytes
+    Info: Processing ended: Fri May 15 14:04:37 2026
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

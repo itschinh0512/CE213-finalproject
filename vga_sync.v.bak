@@ -1,0 +1,127 @@
+//==============================================================
+// VGA SYNC MODULE - BƯỚC 1
+// Mục tiêu:
+// 1. Tạo tín hiệu VGA_HS, VGA_VS chuẩn 640x480 @60Hz
+// 2. Tạo pixel_x, pixel_y
+// 3. Tạo video_on
+// 4. Test bằng cách xuất nền màu cố định
+//
+// Board giả định: DE2/DE2-115 dùng CLOCK_50 = 50MHz
+// VGA chuẩn cần pixel clock = 25MHz
+// => Chia đôi clock 50MHz
+//==============================================================
+
+module vga_sync(
+    input  wire clk,          // CLOCK_50
+    input  wire reset_n,
+
+    output wire VGA_HS,
+    output wire VGA_VS,
+    output wire video_on,
+    output wire pixel_tick,
+
+    output wire [9:0] pixel_x,
+    output wire [9:0] pixel_y
+);
+
+    //==========================================================
+    // 1. TẠO PIXEL CLOCK 25MHz
+    //==========================================================
+    reg pixel_reg;
+
+    always @(posedge clk or negedge reset_n) begin
+        if(!reset_n)
+            pixel_reg <= 1'b0;
+        else
+            pixel_reg <= ~pixel_reg;   // 50MHz -> 25MHz
+    end
+
+    assign pixel_tick = pixel_reg;
+
+
+    //==========================================================
+    // 2. THÔNG SỐ VGA 640x480 @60Hz
+    //==========================================================
+    // Horizontal:
+    // Visible Area   = 640
+    // Front Porch    = 16
+    // Sync Pulse     = 96
+    // Back Porch     = 48
+    // Total          = 800
+
+    localparam H_DISPLAY = 640;
+    localparam H_FRONT   = 16;
+    localparam H_SYNC    = 96;
+    localparam H_BACK    = 48;
+    localparam H_TOTAL   = 800;
+
+    // Vertical:
+    // Visible Area   = 480
+    // Front Porch    = 10
+    // Sync Pulse     = 2
+    // Back Porch     = 33
+    // Total          = 525
+
+    localparam V_DISPLAY = 480;
+    localparam V_FRONT   = 10;
+    localparam V_SYNC    = 2;
+    localparam V_BACK    = 33;
+    localparam V_TOTAL   = 525;
+
+
+    //==========================================================
+    // 3. HORIZONTAL + VERTICAL COUNTER
+    //==========================================================
+    reg [9:0] h_count;
+    reg [9:0] v_count;
+
+    always @(posedge clk or negedge reset_n) begin
+        if(!reset_n) begin
+            h_count <= 0;
+            v_count <= 0;
+        end
+        else if(pixel_tick) begin
+            // Hết 1 dòng
+            if(h_count == H_TOTAL - 1) begin
+                h_count <= 0;
+
+                // Hết 1 frame
+                if(v_count == V_TOTAL - 1)
+                    v_count <= 0;
+                else
+                    v_count <= v_count + 1;
+            end
+            else
+                h_count <= h_count + 1;
+        end
+    end
+
+
+    //==========================================================
+    // 4. TẠO HSYNC & VSYNC (active low)
+    //==========================================================
+    assign VGA_HS = ~(
+                        (h_count >= (H_DISPLAY + H_FRONT)) &&
+                        (h_count <  (H_DISPLAY + H_FRONT + H_SYNC))
+                      );
+
+    assign VGA_VS = ~(
+                        (v_count >= (V_DISPLAY + V_FRONT)) &&
+                        (v_count <  (V_DISPLAY + V_FRONT + V_SYNC))
+                      );
+
+
+    //==========================================================
+    // 5. VIDEO ON
+    //==========================================================
+    assign video_on = (h_count < H_DISPLAY) &&
+                      (v_count < V_DISPLAY);
+
+
+    //==========================================================
+    // 6. PIXEL COORDINATE
+    //==========================================================
+    assign pixel_x = h_count;
+    assign pixel_y = v_count;
+
+endmodule

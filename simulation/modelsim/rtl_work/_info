@@ -1,0 +1,25 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\CE213.Q23\DoAnCE213.Q23\lyrics_vga_top\simulation\modelsim
+vvga_sync
+!i10b 1
+!s100 UWF9CO8>dS6KEXdG9T^2n3
+I5K5[o71dc_k?nK>EzHVcz1
+VI37j8YO;11k<ZCSRS0SJP1
+Z1 dE:\CE213.Q23\DoAnCE213.Q23\lyrics_vga_top\simulation\modelsim
+w1777881757
+8E:/CE213.Q23/DoAnCE213.Q23/lyrics_vga_top/vga_sync.v
+FE:/CE213.Q23/DoAnCE213.Q23/lyrics_vga_top/vga_sync.v
+L0 14
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1777915488.247000
+!s107 E:/CE213.Q23/DoAnCE213.Q23/lyrics_vga_top/vga_sync.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/CE213.Q23/DoAnCE213.Q23/lyrics_vga_top|E:/CE213.Q23/DoAnCE213.Q23/lyrics_vga_top/vga_sync.v|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+E:/CE213.Q23/DoAnCE213.Q23/lyrics_vga_top -O0
