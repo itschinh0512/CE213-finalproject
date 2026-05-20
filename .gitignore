@@ -1,0 +1,19 @@
+# Quartus generated files
+**/db/
+**/incremental_db/
+**/output_files/
+**/simulation/
+**/work/
+**/msim_work/
+*.qws
+*.rpt
+*.summary
+*.done
+*.sof
+*.pof
+*.jdi
+*.pin
+*.cdf
+*.smsg
+*.flock
+*.rdr.flock
