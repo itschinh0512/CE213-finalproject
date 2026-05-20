@@ -1,0 +1,12 @@
+
+State Machine - |karaoke_top|i2c_av_config:u_i2c_cfg|state
+Name state.S_NEXT state.S_STOP2 state.S_STOP1 state.S_ACK state.S_SEND state.S_START2 state.S_START1 state.S_IDLE state.S_DONE 
+state.S_IDLE 0 0 0 0 0 0 0 0 0 
+state.S_START1 0 0 0 0 0 0 1 1 0 
+state.S_START2 0 0 0 0 0 1 0 1 0 
+state.S_SEND 0 0 0 0 1 0 0 1 0 
+state.S_ACK 0 0 0 1 0 0 0 1 0 
+state.S_STOP1 0 0 1 0 0 0 0 1 0 
+state.S_STOP2 0 1 0 0 0 0 0 1 0 
+state.S_NEXT 1 0 0 0 0 0 0 1 0 
+state.S_DONE 0 0 0 0 0 0 0 1 1 
