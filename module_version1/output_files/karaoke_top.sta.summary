@@ -1,0 +1,125 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -4.972
+TNS   : -809.712
+
+Type  : Slow Model Setup 'AUD_BCLK'
+Slack : -2.169
+TNS   : -29.034
+
+Type  : Slow Model Setup 'AUD_DACLRCK'
+Slack : -1.590
+TNS   : -15.375
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : 0.101
+TNS   : 0.000
+
+Type  : Slow Model Hold 'AUD_BCLK'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Hold 'AUD_DACLRCK'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'CLOCK_50'
+Slack : -2.512
+TNS   : -383.050
+
+Type  : Slow Model Recovery 'AUD_BCLK'
+Slack : -2.353
+TNS   : -56.256
+
+Type  : Slow Model Recovery 'AUD_DACLRCK'
+Slack : -2.332
+TNS   : -37.312
+
+Type  : Slow Model Removal 'CLOCK_50'
+Slack : 2.806
+TNS   : 0.000
+
+Type  : Slow Model Removal 'AUD_DACLRCK'
+Slack : 3.102
+TNS   : 0.000
+
+Type  : Slow Model Removal 'AUD_BCLK'
+Slack : 3.105
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.423
+TNS   : -581.900
+
+Type  : Slow Model Minimum Pulse Width 'AUD_BCLK'
+Slack : -1.222
+TNS   : -25.222
+
+Type  : Slow Model Minimum Pulse Width 'AUD_DACLRCK'
+Slack : -1.222
+TNS   : -17.222
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -2.173
+TNS   : -224.436
+
+Type  : Fast Model Setup 'AUD_BCLK'
+Slack : -0.520
+TNS   : -3.459
+
+Type  : Fast Model Setup 'AUD_DACLRCK'
+Slack : -0.209
+TNS   : -0.729
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : -0.252
+TNS   : -0.481
+
+Type  : Fast Model Hold 'AUD_BCLK'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'AUD_DACLRCK'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'AUD_BCLK'
+Slack : -1.145
+TNS   : -27.324
+
+Type  : Fast Model Recovery 'AUD_DACLRCK'
+Slack : -1.135
+TNS   : -18.160
+
+Type  : Fast Model Recovery 'CLOCK_50'
+Slack : -1.017
+TNS   : -150.004
+
+Type  : Fast Model Removal 'CLOCK_50'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Fast Model Removal 'AUD_BCLK'
+Slack : 2.012
+TNS   : 0.000
+
+Type  : Fast Model Removal 'AUD_DACLRCK'
+Slack : 2.015
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.519
+TNS   : -588.044
+
+Type  : Fast Model Minimum Pulse Width 'AUD_BCLK'
+Slack : -1.222
+TNS   : -25.222
+
+Type  : Fast Model Minimum Pulse Width 'AUD_DACLRCK'
+Slack : -1.222
+TNS   : -17.222
+
+------------------------------------------------------------
